@@ -56,6 +56,7 @@ $config = [
             'rules' => [
                 'categories/show/<id:\d+>/page/<page:\d+>' => 'category/show',
                 'categories/show/<id:\d+>' => 'category/show',
+                'search' => 'category/search',
                 'products/show/<id:\d+>' => 'product/show',
             ],
         ],
