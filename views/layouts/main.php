@@ -3,6 +3,8 @@
 use app\assets\AppAsset;
 use yii\helpers\Html;
 
+/** @var yii\web\View $this */
+
 AppAsset::register($this);
 ?>
 <!--
@@ -163,7 +165,10 @@ $content ?>
             <div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">
                 <div class="w3_footer_grid_bottom">
                     <h4>100% secure payments</h4>
-                    <img src="images/card.png" alt=" " class="img-responsive"/>
+                    <?= Html::img([
+                        "@web/images\card.png",
+                        ['class' => 'img-responsive',]
+                    ]); ?>
                 </div>
             </div>
             <div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">

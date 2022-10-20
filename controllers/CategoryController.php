@@ -2,8 +2,6 @@
 
 namespace app\controllers;
 
-use app\components\data\CustomPagination;
-use app\models\Product;
 use app\services\CategoryService;
 use yii\web\NotFoundHttpException;
 
@@ -16,13 +14,12 @@ class CategoryController extends AppController
 
     public function __construct($id, $module, CategoryService $_service, $config = [])
     {
-        //debug([$id, $module, $config]);
         $this->service = $_service;
         parent::__construct($id, $module, $_service, $config);
     }
 
     /**
-     * Display view show category with products
+     * Display the view of the category with products
      * @param int $id category id value
      * @return string
      * @throws NotFoundHttpException
@@ -34,7 +31,11 @@ class CategoryController extends AppController
         return $this->render('show', $showData);
     }
 
-    public function actionSearch()
+    /**
+     * Displays the view of the search results
+     * @return string
+     */
+    public function actionSearch(): string
     {
         $q = trim(\Yii::$app->request->get('q'));
         if (empty($q)) {

@@ -146,7 +146,7 @@
                 </div>
             <?php else: ?>
                 <div class="w3ls_w3l_banner_nav_right_grid1">
-                    <h6>Здесь пока нет товаров...</h6>
+                    <h6>По вашему запросу ничего не найдено</h6>
                 </div>
             <?php endif; ?>
         </div>
