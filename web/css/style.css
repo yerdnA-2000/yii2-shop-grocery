@@ -68,7 +68,7 @@ i.badge.badge-notify.my-cart-badge {
 }
 .product_list_header span {
     font-size: 1em;
-    color: #fff;
+    color: #000;
 	top: 1em;
 }
 input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input[type="reset"],.agileinfo_mail_grid_left ul li a,.events_bottom_left2 ul li a,.w3ls_service_grids1_right a,ul.agileits_social_icons li a,.w3l_banner_nav_right_banner_pet a,.w3ls_w3l_banner_nav_right_grid_head_grid ul li a,.products-breadcrumb ul li a,.w3_footer_grid ul li a,.w3l_fresh_vegetables_grid ul li a,.wthree_footer_copy p a,.agile_top_brand_left_grid1 .button,.w3ls_logo_products_left1 ul.special_items li a,.w3ls_logo_products_left1 ul.phone_email li a{
@@ -570,10 +570,14 @@ ul.dropdown-menu.drp-mnu li a i {
     padding: .5em 0;
     outline: none;
 }
-.agile_top_brand_left_grid:hover .snipcart-details input.button,.snipcart-details input.button:hover{
+.agile_top_brand_left_grid:hover .snipcart-details a.button,.snipcart-details input.button:hover{
     background: #84C639;
 }
-.product_list_header input.button {
+.agile_top_brand_left_grid:hover .snipcart-details input.button,.snipcart-details a.button:hover{
+	background: #84C639;
+}
+.product_list_header button.button {
+	width: 144px;
     color: #fff;
     font-size: 14px;
     outline: none;
@@ -2840,6 +2844,21 @@ img {
 
 .snipcart-thumb img {
 	max-height: 140px;
+}
+
+.snipcart-details a.button {
+	font-size: 14px;
+	color: #fff;
+	background: #FA1818;
+	text-decoration: none;
+	position: relative;
+	border: none;
+	border-radius: 0;
+	width: 100%;
+	display: block;
+	text-transform: uppercase;
+	padding: 0.5em 0;
+	outline: none;
 }
 
 /*-- //login --*/

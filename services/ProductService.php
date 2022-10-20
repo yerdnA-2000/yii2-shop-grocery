@@ -30,19 +30,4 @@ class ProductService extends AppService
         return compact('product');
     }
 
-    /**
-     * @param string $q
-     * @return array
-     */
-    public function getSearchResultData(string $q): array
-    {
-        $query = Product::find()->where(['like', 'title', $q]);
-        $pages = new CustomPagination([
-            'totalCount' => $query->count(),
-            'pageSize' => 4,
-        ]);
-        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-
-        return compact('products', 'pages', 'q');
-    }
 }
