@@ -17,9 +17,21 @@ class CartController extends AppController
         parent::__construct($id, $module, $_service, $config);
     }
 
+    /**
+     * @param int $id
+     * @return false|string|\yii\web\Response
+     */
     public function actionAdd(int $id)
     {
-        var_dump($id); die;
+        $cartData = $this->service->addProductToCart($id);
+        if (!$cartData) {
+            return false;
+        }
+        //Если запрос пришел с ajax, то отдаем вид без шаблона, иначе отдаем ту же страницу, откуда был отправлен запрос
+        if (\Yii::$app->request->isAjax) {
+            return $this->renderPartial('cart_modal', $cartData);
+        }
+        return $this->redirect(\Yii::$app->request->referrer);
     }
 
 }

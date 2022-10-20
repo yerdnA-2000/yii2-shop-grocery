@@ -1,3 +1,10 @@
+<?php
+/**
+ * @var yii\web\View $this
+ * @var array{app\models\Product} $offers
+ */
+
+?>
 <!-- banner -->
 <div class="banner">
     <?= $this->render('//layouts/inc/sidebar') ?>

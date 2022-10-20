@@ -2,7 +2,6 @@
 
 namespace app\services;
 
-use app\components\data\CustomPagination;
 use app\models\Product;
 use yii\web\NotFoundHttpException;
 use yii\web\View;
