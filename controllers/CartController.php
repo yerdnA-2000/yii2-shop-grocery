@@ -18,6 +18,7 @@ class CartController extends AppController
     }
 
     /**
+     * Adds the product to the cart
      * @param int $id
      * @return false|string|\yii\web\Response
      */
@@ -32,6 +33,18 @@ class CartController extends AppController
             return $this->renderPartial('cart_modal', $cartData);
         }
         return $this->redirect(\Yii::$app->request->referrer);
+    }
+
+    /**
+     * Displays the shopping cart
+     * @return string
+     */
+    public function actionShow(): string
+    {
+        $session = \Yii::$app->session;
+        $session->open();
+        return $this->renderPartial('cart_modal', compact('session'));
+        
     }
 
 }

@@ -66,17 +66,23 @@ i.badge.badge-notify.my-cart-badge {
     top: -10px;
     right:-22px;
 }
+#modal-cart img {
+	max-height: 40px !important;
+}
 .product_list_header span {
     font-size: 1em;
     color: #000;
 	top: 1em;
 }
+.product_list_header span.del-item {
+	color: #cc5555;
+}
 input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input[type="reset"],.agileinfo_mail_grid_left ul li a,.events_bottom_left2 ul li a,.w3ls_service_grids1_right a,ul.agileits_social_icons li a,.w3l_banner_nav_right_banner_pet a,.w3ls_w3l_banner_nav_right_grid_head_grid ul li a,.products-breadcrumb ul li a,.w3_footer_grid ul li a,.w3l_fresh_vegetables_grid ul li a,.wthree_footer_copy p a,.agile_top_brand_left_grid1 .button,.w3ls_logo_products_left1 ul.special_items li a,.w3ls_logo_products_left1 ul.phone_email li a{
-	transition: .5s ease-in;
+	/*transition: .5s ease-in;
 	-webkit-transition: .5s ease-in;
 	-moz-transition: .5s ease-in;
 	-o-transition: .5s ease-in;
-	-ms-transition: .5s ease-in;
+	-ms-transition: .5s ease-in;*/
 }
 .agileits_header{
 	background:#212121;
@@ -570,10 +576,10 @@ ul.dropdown-menu.drp-mnu li a i {
     padding: .5em 0;
     outline: none;
 }
-.agile_top_brand_left_grid:hover .snipcart-details a.button,.snipcart-details input.button:hover{
+/*.agile_top_brand_left_grid:hover .snipcart-details a.button,.snipcart-details input.button:hover{
     background: #84C639;
-}
-.agile_top_brand_left_grid:hover .snipcart-details input.button,.snipcart-details a.button:hover{
+}*/
+.snipcart-details a.button:hover{
 	background: #84C639;
 }
 .product_list_header button.button {

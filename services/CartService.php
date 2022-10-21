@@ -10,6 +10,7 @@ use yii\web\View;
 class CartService extends AppService
 {
     /**
+     * Adds the product to the cart using the session
      * @param int $id id of a product
      * @return array|false
      */

@@ -22,7 +22,6 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/bootstrap.css',
         'css/style.css',
-        'css/font-awesome.css',
         '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic',
         '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic',
         'css/flexslider.css',
@@ -39,6 +38,7 @@ class AppAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\YiiAsset',
+        '\rmrevin\yii\fontawesome\AssetBundle',
         //'yii\bootstrap5\BootstrapAsset'
     ];
 }

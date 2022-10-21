@@ -1,11 +1,13 @@
 <?php
 
 use app\assets\AppAsset;
+use app\assets\FontAwesomeAsset;
 use yii\helpers\Html;
 
 /** @var yii\web\View $this */
 
 AppAsset::register($this);
+FontAwesomeAsset::register($this);
 ?>
 <!--
 author: W3layouts
@@ -39,8 +41,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </form>
     </div>
     <div class="product_list_header">
-        <button type="button" class="button" data-toggle="modal" data-target="#modal-cart">
-            $0
+        <button onclick="getCart()" type="button" class="button" data-toggle="modal" data-target="#modal-cart">
+            <span class="cart-sum" style="color: #fff;">
+                $<?= $_SESSION['cart.sum'] ?? '0' ?>
+            </span>
         </button>
         <!-- Modal from Bootstrap JavaScript -->
         <div class="modal fade" id="modal-cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -50,9 +54,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Корзина</h4>
                     </div>
+                    <!-- Cart content -->
                     <div class="modal-body">
-                        ...
+
                     </div>
+                    <!-- /Cart content -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Continue shopping</button>
                         <a href="<?= \yii\helpers\Url::to(['cart/view']) ?>" class="btn btn-success">Place an order</a>
