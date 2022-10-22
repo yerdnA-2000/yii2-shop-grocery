@@ -98,7 +98,7 @@ $('.add-to-cart').on('click', function () {
 
 function getCart() {
     $.ajax({
-        url: 'cart/show',
+        url: '/cart/preview',
         type: 'GET',
         success: function (res) {
             //console.log(res);
@@ -112,4 +112,63 @@ function getCart() {
         },
     });
 }
+
+$('#modal-cart .modal-body').on('click', '.del-item', function () {
+    let id = $(this).data('id');
+    $.ajax({
+        url: '/cart/delete-item',
+        data: {id: id},
+        type: 'GET',
+        success: function (res) {
+            //console.log(res);
+            if (!res) {
+                alert('Ошибка удаления.');
+            }
+            let currentLocation = document.location.pathname;
+            if (currentLocation === '/cart/checkout') {
+                location = '/cart/checkout';
+            }
+            showCart(res);
+        },
+        error: function () {
+            alert('Error!');
+        },
+    });
+});
+
+function clearCart() {
+    $.ajax({
+        url: 'cart/clear',
+        type: 'GET',
+        success: function (res) {
+            //console.log(res);
+            if (!res) {
+                alert('Ошибка очистки корзины.');
+            }
+            showCart(res);
+        },
+        error: function () {
+            alert('Error!');
+        },
+    });
+}
+
+$('.value-plus, .value-minus').on('click', function(){
+    let id = $(this).data('id'),
+        qty = $(this).data('qty');
+    $('.cart-table .overlay').fadeIn();
+    $.ajax({
+        url: '/cart/change',
+        data: {id: id, qty: qty},
+        type: 'GET',
+        success: function(res){
+            if(!res) alert('Error product!');
+            location = '/cart/checkout';
+        },
+        error: function(){
+            alert('Error!');
+        }
+    });
+});
+
 /*  /Cart    */

@@ -35,7 +35,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
     <div class="w3l_search">
         <form action="<?= \yii\helpers\Url::to(['category/search']) ?>" method="get">
-            <input type="text" name="q" value="Search a product..." onfocus="this.value = '';"
+            <input type="text" name="q" value="Поиск по продуктам..." onfocus="this.value = '';"
                    onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
             <input type="submit" value=" ">
         </form>
@@ -60,9 +60,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                     <!-- /Cart content -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Continue shopping</button>
-                        <a href="<?= \yii\helpers\Url::to(['cart/view']) ?>" class="btn btn-success">Place an order</a>
-                        <button type="button" class="btn btn-danger">Empty cart</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>
+                        <a href="<?= \yii\helpers\Url::to(['cart/checkout']) ?>" class="btn btn-success">Оформить заказ</a>
+                        <button onclick="clearCart()" type="button" class="btn btn-danger">Очистить корзину</button>
                     </div>
                 </div>
             </div>
@@ -83,8 +83,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="mega-dropdown-menu">
                     <div class="w3ls_vegetables">
                         <ul class="dropdown-menu drp-mnu">
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="login.html">Sign Up</a></li>
+                            <li><a href="login.html">Войти</a></li>
+                            <li><a href="login.html">Зарегистрироваться</a></li>
                         </ul>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </ul>
     </div>
     <div class="w3l_header_right1">
-        <h2><a href="mail.html">Contact Us</a></h2>
+        <h2><a href="mail.html">Контакты</a></h2>
     </div>
     <div class="clearfix"></div>
 </div>
