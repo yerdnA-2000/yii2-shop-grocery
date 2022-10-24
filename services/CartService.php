@@ -3,6 +3,7 @@
 namespace app\services;
 
 use app\models\Cart;
+use app\models\Order;
 use app\models\Product;
 use yii\web\View;
 
@@ -67,7 +68,8 @@ class CartService extends AppService
     {
         $session = \Yii::$app->session;
         $this->setMeta($view, "Оформление заказа | " . \Yii::$app->name);
-        return compact($session);
+        $order = new Order();
+        return compact('session', 'order');
     }
 
     /**

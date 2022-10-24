@@ -6,13 +6,13 @@ use yii\db\ActiveRecord;
 
 /**
  * Model as 'products' table
- * @property int|null $id
- * @property string|null $title
+ * @property int $id
+ * @property string $title
  * @property string|null $keywords
  * @property string|null $description
  * @property \yii\db\ActiveQuery $category virtual property
- * @property numeric|null $price
- * @property string|null $img
+ * @property numeric $price
+ * @property string $img
  * @extends ActiveRecord
  */
 class Product extends ActiveRecord
