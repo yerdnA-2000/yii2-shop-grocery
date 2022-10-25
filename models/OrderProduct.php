@@ -39,4 +39,22 @@ class OrderProduct extends ActiveRecord
         ];
     }
 
+    public function saveOrderProducts($products, $orderId)
+    {
+        foreach ($products as $id => $product) {
+            $this->id = null;
+            $this->isNewRecord = true;
+            $this->order_id = $orderId;
+            $this->product_id = $id;
+            $this->title = $product['title'];
+            $this->price = $product['price'];
+            $this->qty = $product['qty'];
+            $this->total = $product['qty'] * $product['qty'];
+            if (!$this->save()) {
+                return false;
+            }
+            return true;
+        }
+    }
+
 }
